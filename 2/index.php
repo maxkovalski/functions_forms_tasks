@@ -15,9 +15,8 @@ require "engine.php";
 </header>
 <main>
     <form method="post">
-        <textarea name="fText" rows="10" placeholder="Type first text..."></textarea>
-        <textarea name="sText"rows="10" placeholder="Type first text..."></textarea>
-        <input type="submit" value="Find common words">
+        <textarea name="uText" rows="10" placeholder="Type your text..."></textarea>
+        <input type="submit" value="Fine the longest words">
         <textarea class="result" rows="3" disabled><?= $result; ?></textarea>
     </form>
 </main>
