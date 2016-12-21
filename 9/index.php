@@ -15,13 +15,13 @@ require "engine.php";
 </header>
 <main>
     <form method="post">
-        <textarea name="uText" rows="10" placeholder="Type your text..."></textarea>
-        <input type="submit" value="Find the longest words">
+        <textarea name="uText" rows="3" placeholder="Type your text..."></textarea>
+        <input type="submit" value="Reverse the string">
         <textarea class="result" rows="3" disabled><?= $result; ?></textarea>
     </form>
 </main>
 <footer>
-    20.12.2016
+    21.12.2016
 </footer>
 </body>
 </html>
