@@ -1,36 +1,28 @@
 <?php
-define("DS", DIRECTORY_SEPARATOR);
 
-function saveImage(){
-    if(!is_dir("gallery")){
-        mkdir("gallery");
-    }
-    $mime = mime_content_type($_FILES['img']['tmp_name']);
-    if(preg_match("/image\/*/", $mime)){
-        $destination = __DIR__ . DS . "gallery" . DS . $_FILES['img']['name'];
-        move_uploaded_file($_FILES['img']['tmp_name'], $destination);
-    } else {
-        echo "Неверный тип файла!";
-    }
+function checkNumber($number){
+    $number = +$number;
+    return is_integer($number) && $number > 0 ? $number : false;
 }
 
-function getGallery(){
-    $html = "";
-    if(is_dir('gallery')){
-        $gallery = scandir('gallery');
-        foreach ($gallery as $image){
-            $pic = "gallery/$image";
-            if(is_file($pic)){
-                $html .=<<<GALLERY
-<div class='uImage'><a href='gallery/$image'><img src='gallery/$image'/></a><a class='close' href="engine.php?delImage=$image">X</a></div>
-GALLERY;
-            }
+function loadText(){
+    $mime = mime_content_type($_FILES['uText']['tmp_name']);
+    if($mime == "text/plain"){
+        $uText = file_get_contents($_FILES['uText']['tmp_name']);
+        return $uText;
+    }
+    return false;
+}
+
+function deleteWords($length, $uText){
+    $allWords = str_word_count($uText, 1);
+    $wordsToDelete = [];
+    foreach ($allWords as $word){
+        if(strlen($word) >= $length){
+            $wordsToDelete[] = $word;
         }
     }
-    return $html;
-}
-
-function deleteImage($img){
-    $img = "gallery" . DS . urldecode($img);
-    unlink($img);
+    $result = str_replace($wordsToDelete, "", $uText);
+    $result = preg_filter("/[ ]{2,}/", " ", $result);
+    return $result;
 }

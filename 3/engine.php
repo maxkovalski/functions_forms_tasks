@@ -1,11 +1,15 @@
 <?php
 require "functions.php";
 
-if(!empty($_FILES)) {
-    saveImage();
-    header("Location: /");
+$result= "";
+
+if(isset($_POST['uNumb']) && !empty($_FILES)){
+    if((($uText = loadText()) !== false) && ($uNumber = checkNumber($_POST['uNumb']))){
+       $result = deleteWords($uNumber, $uText);
+
+    } else {
+       $result = "Please, check the input data";
+    }
 }
-if(isset($_GET['delImage'])){
-    deleteImage($_GET['delImage']);
-    header("Location:/");
-}
+
+
