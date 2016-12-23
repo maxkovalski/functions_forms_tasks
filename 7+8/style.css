@@ -1,0 +1,80 @@
+body {
+    background: lightgray;
+    font-family: Verdana;
+}
+header, footer {
+    background: grey;
+    color: floralwhite;
+    text-align: center;
+    margin: auto;
+    padding: 10px;
+    text-transform: uppercase;
+}
+main{
+    overflow: hidden;
+}
+.contentBlock {
+    margin: 10px auto;
+    background: floralwhite;
+    color: dimgrey;
+    padding: 2%;
+    width: 45%;
+    border: 2px double grey;
+    font-size: larger;
+}
+.contentBlock h2 {
+    text-align: center;
+    margin: auto;
+    padding: 10px;
+    text-transform: uppercase;
+}
+.rightBlock{
+    float: right;
+    max-height: 400px;
+    overflow: auto;
+}
+.leftBlock{
+    float: left;
+}
+.uNameInput, .uCommentInput {
+    background: floralwhite;
+    box-sizing: border-box;
+    padding: 5px;
+    border: 2px solid grey;
+}
+.uNameInput {
+    width: 50%;
+}
+.uCommentInput {
+    width: 100%;
+    resize: none;
+}
+input[type=submit]{
+    display: block;
+    background: grey;
+    color: floralwhite;
+    border: none;
+    height: 30px;
+    width: 50%;
+    font-weight: bold;
+    margin: 10px auto;
+}
+input[type=submit]:hover{
+    background-color: dimgrey;
+    cursor: pointer;
+}
+.uComment {
+    border-bottom: 2px solid grey;
+}
+.uComment mark {
+    display: inline-block;
+    padding: 3px 5px;
+    background-color: lightgrey;
+    border-radius: 3%;
+}
+.close {
+    display: inline-block;
+    float: right;
+    text-decoration: none;
+    color: darkred;
+}
