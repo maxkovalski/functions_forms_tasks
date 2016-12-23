@@ -1,0 +1,79 @@
+body {
+    background: lightgray;
+    font-family: Verdana;
+}
+header, footer {
+    background: grey;
+    color: floralwhite;
+    text-align: center;
+    margin: auto;
+    padding: 10px;
+    text-transform: uppercase;
+}
+main{
+    overflow: hidden;
+}
+.contentBlock {
+    margin: 10px auto;
+    background: floralwhite;
+    color: dimgrey;
+    padding: 5px;
+    border: 2px double grey;
+    font-size: larger;
+}
+.contentBlock h2 {
+    text-align: center;
+    margin: auto;
+    padding: 10px;
+    text-transform: uppercase;
+}
+.rightBlock{
+    float: right;
+    height: 450px;
+    width: 75%;
+    overflow: auto;
+}
+.leftBlock{
+    float: left;
+    width: 20%;
+}
+input[type=file]
+{
+    display: block;
+    border: none;
+    height: 30px;
+    font-weight: bold;
+    margin: 10px auto;
+}
+input[type=submit]{
+    display: block;
+    background: grey;
+    color: floralwhite;
+    border: none;
+    height: 30px;
+    width: 50%;
+    font-weight: bold;
+    margin: 10px auto;
+}
+input[type=submit]:hover{
+    background-color: dimgrey;
+    cursor: pointer;
+}
+.uImage{
+    float: left;
+    margin-right: 10px;
+    max-width: 350px;
+    position: relative;
+}
+.uImage img{
+    max-width: 95%;
+    max-height: 350px;
+    border: 1px double grey;
+}
+.close {
+    display: inline-block;
+    margin-left: 1px;
+    position: absolute;
+    text-decoration: none;
+    color: darkred;
+}
