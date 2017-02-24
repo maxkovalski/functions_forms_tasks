@@ -15,13 +15,9 @@ function loadText(){
 }
 
 function deleteWords($length, $uText){
-    $allWords = str_word_count($uText, 1);
-    $wordsToDelete = [];
-    foreach ($allWords as $word){
-        if(strlen($word) >= $length){
-            $wordsToDelete[] = $word;
-        }
-    }
+    $allWords = preg_split("/[\s\.\?!:();,]+/", $uText);
+    $wFilter = function ($str) use ($length) { return strlen($str) >= $length ? true : false; };
+    $wordsToDelete = array_filter($allWords, $wFilter);
     $result = str_replace($wordsToDelete, "", $uText);
     $result = preg_filter("/[ ]{2,}/", " ", $result);
     return $result;
