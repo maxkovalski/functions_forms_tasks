@@ -31,9 +31,11 @@ function scanDirs($uDir, $subDir = "") {
             unset($arrFiles[$key]);
         }
     }
+    unset($file);
     $arrFiles += $arrSubFiles;
     return $arrFiles;
 }
+
 
 function findFilesWithWord(array $arrFiles, $uDir, $uWord){
     $resFiles = [];
