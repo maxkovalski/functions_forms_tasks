@@ -1,0 +1,63 @@
+body {
+    background: lightgray;
+    font-family: Arial Verdana;
+}
+header, footer {
+    background: grey;
+    color: floralwhite;
+    text-align: center;
+    margin: auto;
+    padding: 10px;
+    text-transform: uppercase;
+}
+main{
+    overflow: hidden;
+}
+.contentBlock {
+    margin: 10px auto;
+    background: floralwhite;
+    color: dimgrey;
+    padding: 5px;
+    border: 2px double grey;
+    font-size: larger;
+    text-align: center;
+}
+.contentBlock form{
+    margin: auto;
+    width: 90%;
+    text-align: center;
+}
+.left{
+    float: left;
+    width: 30%;
+}
+.right{
+    float: right;
+    width: 65%;
+}
+input[type=submit]{
+    display: block;
+    background: grey;
+    color: floralwhite;
+    border: none;
+    height: 30px;
+    width: 100%;
+    font-weight: bold;
+    margin: 10px auto;
+}
+input[type=submit]:hover{
+    background-color: dimgrey;
+    cursor: pointer;
+}
+input[type=text]{
+    width: 100%;
+}
+.result{
+    background: floralwhite;
+    width: 95%;
+    box-sizing: border-box;
+    margin: 10px auto;
+    padding: 2px 10px;
+    resize: none;
+    border: 2px solid grey;
+}
